@@ -24,8 +24,16 @@ Um Framework de Back End em Node.js será criado do zero para o desenvolvimento 
 quando é colocado um 'm' na frente do js, indica que aquele arquivo é um tipo module. Este arquivo permite que você utilize o import from, que importa outros arquivos
 
 # Comandos
-note --watch nomeArquivo.mjs "permite que o terminal fique observando as atualizações do arquivo
+node --watch nomeArquivo.mjs "permite que o terminal fique observando as atualizações do arquivo
+node --no-warnings --watch "não permite que avisos sejam exibidos"
 
 # instale os tipos do node
 npm i -D @types/node
 
+# é possivel deixar invisivel algumas pastas e arquivos dentro do projeto
+basta criar a pasta .vscode e adicionar o seguinte código
+{
+    "files.exclude": {
+        "nomeArquivo.extensao": true
+    }
+}
