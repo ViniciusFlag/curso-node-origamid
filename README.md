@@ -37,3 +37,15 @@ basta criar a pasta .vscode e adicionar o seguinte código
         "nomeArquivo.extensao": true
     }
 }
+
+# createServer - Função para criar servidores em Node.js
+- (req, res) => {}
+Callback que é ativado toda vez que é feito uma requisição ao servidor. Possui acesso a requisissão (req) e a resposta (res).
+
+- listen(port)
+Inicia o servidor e fica aguardando as requisições na porta passada
+
+# Response - É um objeto do tipo serverResponse que possui propriedades e metodos para interagir com a resposta que sera dada pelo servidor
+statusCode: Define o status da resposta como 200(ok), 404(not found), 301(Moved Permanently), 201(Created) e outros
+
+setHeader(key, value): é o que define os cabeçalhos para uma resposta, recebe a chave e depois o valor
