@@ -1,3 +1,7 @@
-const response = await fetch("http://localhost:3000");
+const response = await fetch("http://localhost:3000/produto", {
+    method: "POST",
+});
 
-console.log(response);
+const body = await response.text();
+
+console.log(body);

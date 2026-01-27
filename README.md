@@ -49,3 +49,10 @@ Inicia o servidor e fica aguardando as requisições na porta passada
 statusCode: Define o status da resposta como 200(ok), 404(not found), 301(Moved Permanently), 201(Created) e outros
 
 setHeader(key, value): é o que define os cabeçalhos para uma resposta, recebe a chave e depois o valor
+
+# Request - É um objeto do tipo IncomingMessage com propriedades e metodos para obter dados da requisição, com isso, é possivel identificar as rotas passadas pelo usuário e servir as informações corretas
+method: Identifica qual é o método utilizado no request (GET, POST, DELETE ...)
+url: Pega a URL utilizada durante o request
+
+# URL - É onde é pego parte da rota, utilizando o req.url. Mas para obter a URL completa, é necessario construir ela
+new URL(path, host): é a função construtora de URL, ela faz um parsing e cria um objeto com as suas partes
