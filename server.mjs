@@ -1,17 +1,25 @@
+import { log } from "node:console";
 import { createServer } from "node:http";
 
-const server = createServer((request, response) => {
-  response.setHeader("Content-Type", "text/plain; charset=utf-8");
+const server = createServer((req, res) => {
+  res.setHeader("Content-Type", "text/plain; charset=utf-8");
   
-  if (request.method === "GET" && request.url === "/") {
-    response.statusCode = 200;
-    response.end("HOME");
-  } else if (request.method === "POST" && request.url === "/produto") {
-    response.statusCode = 201;
-    response.end("Produto");
+  const url = new URL(req.url, "http://localhost:3000");
+  const cor = url.searchParams.get("cor");
+  const tamanho = url.searchParams.get("tamanho");
+
+  console.log("headers", req.headers['content-type']);
+  console.log("raw headers", req.rawHeaders);
+
+  if (req.method === "GET" && url.pathname === "/") {
+    res.statusCode = 200;
+    res.end("HOME");
+  } else if (req.method === "POST" && url.pathname === "/produto") {
+    res.statusCode = 201;
+    res.end(`Produto: ${cor}, ${tamanho}`);
   } else {
-    response.statusCode = 404;
-    response.end("Pagina não encontrada");
+    res.statusCode = 404;
+    res.end("Pagina não encontrada");
   }
 });
 

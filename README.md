@@ -57,3 +57,9 @@ url: Pega a URL utilizada durante o request
 # URL - É onde é pego parte da rota, utilizando o req.url. Mas para obter a URL completa, é necessario construir ela
 new URL(path, host): é a função construtora de URL, ela faz um parsing e cria um objeto com as suas partes
 req.url: contem apenas o path + query (sem protocolo/host), ex.: /caminho?query=1
+
+# Header - É o cabeçalho
+content-type: é o tipo de conteúdo recebido, pode ser (application/json, text/html, multipar/form-data ...)
+authorization: é a parte do header onde vem o token de sessão/autenticação
+cookie: que são enviados pelo cliente
+x-forwarded-for: endereço de ip de origem. Pode vir também pelo req.socket.remoteAddress.
