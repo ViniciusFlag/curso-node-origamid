@@ -37,29 +37,3 @@ basta criar a pasta .vscode e adicionar o seguinte código
         "nomeArquivo.extensao": true
     }
 }
-
-# createServer - Função para criar servidores em Node.js
-- (req, res) => {}
-Callback que é ativado toda vez que é feito uma requisição ao servidor. Possui acesso a requisissão (req) e a resposta (res).
-
-- listen(port)
-Inicia o servidor e fica aguardando as requisições na porta passada
-
-# Response - É um objeto do tipo serverResponse que possui propriedades e metodos para interagir com a resposta que sera dada pelo servidor
-statusCode: Define o status da resposta como 200(ok), 404(not found), 301(Moved Permanently), 201(Created) e outros
-
-setHeader(key, value): é o que define os cabeçalhos para uma resposta, recebe a chave e depois o valor
-
-# Request - É um objeto do tipo IncomingMessage com propriedades e metodos para obter dados da requisição, com isso, é possivel identificar as rotas passadas pelo usuário e servir as informações corretas
-method: Identifica qual é o método utilizado no request (GET, POST, DELETE ...)
-url: Pega a URL utilizada durante o request
-
-# URL - É onde é pego parte da rota, utilizando o req.url. Mas para obter a URL completa, é necessario construir ela
-new URL(path, host): é a função construtora de URL, ela faz um parsing e cria um objeto com as suas partes
-req.url: contem apenas o path + query (sem protocolo/host), ex.: /caminho?query=1
-
-# Header - É o cabeçalho
-content-type: é o tipo de conteúdo recebido, pode ser (application/json, text/html, multipar/form-data ...)
-authorization: é a parte do header onde vem o token de sessão/autenticação
-cookie: que são enviados pelo cliente
-x-forwarded-for: endereço de ip de origem. Pode vir também pelo req.socket.remoteAddress.
