@@ -3,6 +3,7 @@ const response = await fetch("http://localhost:3000/produto?cor=azul&tamanho=g",
     headers: {
         "Content-Type": "application/json",
     },
+    body: JSON.stringify({ unserName: "Aron", password: "12345" }),
 });
 
 const body = await response.text();
